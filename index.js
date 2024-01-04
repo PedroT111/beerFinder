@@ -227,7 +227,7 @@ async function scrapeByBeer(beer) {
             (async () => {
                 try {
                     const page = await browser.newPage();
-                    await page.goto(site.url, { waitUntil: 'networkidle0', timeout: 60000 });
+                    await page.goto(site.url, { waitUntil: 'networkidle0', timeout: 120000 });
                     await scrollPageToBottom(page);
                     const data = await scrapeBeerData(page, site.selector, site.priceSelector, site.containerSelector, site.literPriceSelector);
                     return { siteName: site.name, data };
