@@ -184,7 +184,7 @@ async function scrapeBeerData(page, selector, priceSelector, containerSelector, 
 }
 
 async function scrapeByBeer(beer) {
-    const browser = await puppeteer.launch({ headless: "new" });
+    const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox']  });
     const promises = [];
 
     const sites = [
