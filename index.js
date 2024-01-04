@@ -4,7 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
 
 const token = process.env.TELEGRAM_TOKEN;
-const bot = new TelegramBot(token, {webHook: 'https://nimble-cascaron-9ee1e2.netlify.app/' });
+const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/start|\/help/, (msg) => {
     const chatId = msg.chat.id;
